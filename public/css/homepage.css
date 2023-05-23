@@ -1,0 +1,374 @@
+body{
+    background-color: grey;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.background {
+    background-color: #F9FAFB;
+    width: 375px;
+    height: 3060px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    width: 375px;
+    height: 77.23px;
+}
+
+.navbar > .logo {
+    padding-left: 24px;
+    width: 106.61px;
+}
+
+.navbar > .menu {
+    padding-right: 24px;
+    width: 28px;
+}
+
+.body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* padding: 24px; */
+    margin: 24px;
+}
+
+.body > img {
+    padding-top: 23.77px;
+    width: 197px;
+    height: 197px;
+}
+
+.container-1 {
+    height: 259px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-1 > .title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.container-1 span {
+    color: #1C64F2;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.container-1 > .sub-title-1 {
+    margin: 0;
+    color: #8E8E8E;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.container-1 img {
+    margin: 0;
+    width: 235px;
+}
+
+.container-2 {
+    margin-top: 64px;
+    display: flex;
+    width: 327px;
+    height: 120px;
+    justify-content: space-between;
+    border: 2px solid #A4CAFE;
+    border-radius: 12px;
+    background-color: #EBF5FF;
+    margin-bottom: 64px;
+}
+
+.container-2  img {
+    margin: 0px;
+    width: 32px;
+    height: 32px;
+    margin-top: 24px;
+    margin-left: 24px;
+}
+
+.container-2 > div {
+    width: 227px;
+    height: 72px;
+    margin-top: 24px;
+    margin-right: 24px;
+}
+
+.container-2 p {
+    margin: 0px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.title-2 {
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 13px;
+}
+
+.sub-title-2 {
+    margin: 0px;
+    color: #8E8E8E;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 32px;
+}
+
+.container-3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 327px;
+    height: 185px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-3 .title {
+    margin-top: 16px;
+    margin-right: 16px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 295px;
+    height: 50px;
+}
+
+.container-3 .title-2{
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #8E8E8E;
+}
+
+.container-3 .tanggal-kejadian{
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.container-3 .sub-title{
+    margin-bottom: 16px;
+    margin-right: 16px;
+    margin-left: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 295px;
+    height: 79px;
+}
+
+.container-3 .kejadian-card{
+    width: 124px;
+    height: 79px;
+    background-color: #0466C8;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: linear-gradient(to top right, #0466C8, #4387CA);
+
+}
+
+.container-3 .banyak-kejadian {
+    /* margin-top: 12px;
+    margin-left: 12px; */
+    margin: 0px;
+     margin-top: 12px;
+    margin-left: 12px;
+    font-size: 24px;
+    font-weight: 600;
+    color: white;
+}
+
+.container-3 .kejadian {
+    margin: 0px;
+    margin-bottom: 12px;
+    margin-left: 12px;
+    font-size: 12px;
+    font-weight: 400;
+    color: white;
+}
+
+.container-3 .kasus-meningkat {
+    width: 147px;
+    height: 32px;
+}
+
+.title-3{
+    margin-top: 32px;
+    width: 100%;
+    height: 22px;
+}
+
+.title-3 p {
+    color: #575757;
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 13px;
+}
+
+.container-4 {
+    display: grid;
+    grid-template-columns: 76px 76px 76px;
+    gap: 12px;
+    margin-top: 16px;
+    width: 100%;
+    height: 30px;
+}
+
+.container-4 .semua {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 100%;
+    background-color: #1C64F2;
+    border-radius: 24px;
+}
+
+.container-4 p {
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.container-4 .motor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 100%;
+    border: 1px solid #D1D5DB;
+    border-radius: 24px;
+}
+
+.container-4 .mobil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 76px;
+    height: 100%;
+    border: 1px solid #D1D5DB;
+    border-radius: 24px;
+}
+
+.container-4 .semua {
+    color: white;
+}
+
+.container-4 .motor {
+    color: #D1D5DB;
+}
+
+.container-4 .mobil {
+    color: #D1D5DB;
+}
+
+.container-5 {
+    margin-top: 16px;
+    width: 327px;
+    height: 418px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container-5 .gambar-motor-beat {
+    border-radius: 12px 12px 0px 0px;
+    width: 100%;
+    height: 170px;
+}
+
+.container-5 .informasi-kendaraan {
+    height: 156px;
+    width: 187px;
+    margin-left: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-5 .informasi-kendaraan > .plat-nomor{
+    margin: 0px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.container-5 .informasi-kendaran-details{
+    width: 187px;
+    height: 118px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container-5 .details{
+    height: 34px;
+    width: 181px;
+    display: grid;
+    grid-template-columns: 14px auto;
+    grid-template-rows: auto auto;
+}
+
+.container-5 .informasi-kendaran-details > .details > .tag{
+    margin: 0px;
+    width: 14px;
+    height: 14px;
+}
+
+.container-5 .informasi-kendaran-details  .details  .deskripsi-title{
+    margin: 0px;
+    font-size: 10px;
+    color: #8E8E8E;
+}
+
+.container-5 .informasi-kendaran-details  .details  .isi-deskripsi{
+    grid-column: span 2;
+    margin: 0px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #575757;
+}
+
+.container-5 .tombol-hubungi-pemilik {
+    margin-left: 16px;
+    margin-bottom: 16px;
+    height: 36px;
+    width: 152px;
+}
+
+
+
+
+
+
+
+
+
