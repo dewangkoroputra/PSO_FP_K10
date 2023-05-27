@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('panggilan', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->foreignuuid('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->id('id',36)->autoIncrement();
+            $table->foreignid('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('Cascade');
             $table->timestamp('Calltime')->useCurrent();
             });
     }

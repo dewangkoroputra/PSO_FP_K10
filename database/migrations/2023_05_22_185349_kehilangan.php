@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kehilangan', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+            $table->id('id',36)->autoIncrement();
             $table->string('kontak', 255);
             $table->string('jenisKendaraan',255);
             $table->string('model_kendaraan',255);
@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('foto_kendaraan');
             $table->date('tanggal_kejadian');
             $table->time('waktu_kejadian');
+            $table->timestamps();
             });
     }
 
