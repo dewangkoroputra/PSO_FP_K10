@@ -21,7 +21,34 @@ class KehilanganController extends Controller
             'tanggal_kejadian'=> 'required',
             'waktu_kejadian'=> 'required',
         ]);
+        //State photo
+        $photo =$request->file('foto_kendaraan')->store('images');
+        $nama_file = time()."_".$photo;
+        //buat nentuin tujuan foldernya
+        $tujuan_upload = 'lostphoto';
 
-        return redirect()->route('homepage')->with('success','Laporan Successful');
+        kehilangan::create([
+            'kontak'=> request('kontak'),
+            'jenisKendaraan'=> request('jenisKendaraan'),
+            'model_kendaraan'=> request('model_kendaraan'),
+            'tahun_keluaran'=> request('tahun_keluaran'),
+            'warna'=> request('warna'),
+            'plat_nomor'=> request('plat_nomor'),
+            'foto_kendaraan'=> $nama_file,
+            'tanggal_kejadian'=> request('tanggal_kejadian'),
+            'waktu_kejadian'=> request('waktu_kejadian')
+        ]);
+        session()->flash('success', 'Susu sapi');
+
+
+        return view('homepage');
     }
+    public function index()
+    {
+    /*
+    $posts = Post::all();
+
+    // Kirim data posting ke tampilan
+    return view('pagemateri', compact('posts'));*/
+}
 }

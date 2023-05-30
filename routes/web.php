@@ -43,7 +43,7 @@ require __DIR__.'/auth.php';
 Route::get('/', function () {
     return view('homepage');
 });
-Route::get('/homepage', function () {
+Route::get('homepage', function () {
     return view('homepage');
 });
 
@@ -62,24 +62,13 @@ Route::middleware('auth')->group(function () {
     Route::get('kehilangan', function (){
         return view('teslogout');
     });
-    //buat form kehilangan
-    Route::post('kehilangan',function(){
-    kehilangan::create([
-        'kontak'=> request('kontak'),
-        'jenisKendaraan'=> request('jenisKendaraan'),
-        'model_kendaraan'=> request('model_kendaraan'),
-        'tahun_keluaran'=> request('tahun_keluaran'),
-        'warna'=> request('warna'),
-        'plat_nomor'=> request('plat_nomor'),
-        'foto_kendaraan'=> request('foto_kendaraan'),
-        'tanggal_kejadian'=> request('tanggal_kejadian'),
-        'waktu_kejadian'=> request('waktu_kejadian')
-    ]); return redirect('homepage');
-   })->name('kehilangan');
+
+    /*
    //buat upload file
     Route::get('upload', function () {
         return view('upload');
     });
-    Route::post('upload',[UploadController::class,'upload'])->name('upload');
+    Route::post('upload',[UploadController::class,'upload'])->name('upload');*/
+    Route::post('/kehilangan',[KehilanganController::class,'store']);
 });
 

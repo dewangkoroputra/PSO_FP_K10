@@ -9,7 +9,7 @@ class panggilan extends Model
 {
     use HasFactory;
     protected $table = 'panggilan';
-    protected $fillable = ['id', 'Calltime', 'user_id'];
+    protected $fillable = [ 'Calltime', 'user_id'];
     protected $primarykey = ['id'];
     protected $guarded = ['id'];
 
