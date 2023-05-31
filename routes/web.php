@@ -76,3 +76,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/kehilangan',[KehilanganController::class,'store']);
 });
 
+Route::get('/tentang', function () {
+    return view('tentangproduk');
+});
+
