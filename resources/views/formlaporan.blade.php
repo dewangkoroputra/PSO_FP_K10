@@ -1,22 +1,6 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layout')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    @vite('resources/css/app.css')
-
-    <title>@yield('RanmITS')</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-
-</head>
+@section('content')
 <nav class="sticky top-0 max-w-xl mx-auto navbar justify-between p-2 bg-white border-b-2 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
     <div class="max-w-screen-xl mx-auto p-4 inline-flex space-x-4 items-center justify-start">
         <a href="#" class="flex items-center">
@@ -41,8 +25,6 @@
         <option selected>Pilih jenis kendaraan</option>
         <option value="US">United States</option>
         <option value="CA">Canada</option>
-        <option value="FR">France</option>
-        <option value="DE">Germany</option>
     </select>
 
     <!--Model Kendaraan-->
@@ -77,4 +59,6 @@
 <footer class="max-w-xl bottom-0 mx-auto bg-gray-700">
     <p>tes</p>
 </footer>
+@endsection
+
 </html>
