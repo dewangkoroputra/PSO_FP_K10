@@ -37,6 +37,10 @@ Route::get('/layout', function () {
     return view('layout');
 });
 
+Route::get('/laporkehilangan', function () {
+    return view('formlaporan');
+});
+
 require __DIR__.'/auth.php';
 
 //route tidak perlu autentifikasi
