@@ -80,3 +80,7 @@ Route::get('/tentang', function () {
     return view('tentangproduk');
 });
 
+Route::get('/beranda', function () {
+    return view('homepage-tailwind');
+});
+
