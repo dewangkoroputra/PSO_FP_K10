@@ -29,8 +29,8 @@
         <p class="text-md font-poppins font-semibold text-gray-700">Login</p>
     </div>
 </nav>
-<div class="container max-w-xl px-8 pt-8 mx-auto bg-slate-100">
-    <p class="text-2xl font-poppins font-medium leading-relaxed text-center text-gray-600">Login</p>
+<div class="max-w-xl min-h-screen px-8 pt-8 mx-auto bg-slate-100">
+    <p class="text-2xl font-poppins font-medium leading-relaxed text-center text-gray-600 pb-4">Login</p>
     <form method="POST" action="{{ route('login') }}">
         @csrf
         <!--Alamat Email-->
@@ -44,7 +44,7 @@
         </div>
 
         <!--Password-->
-        <div class="mb-6">
+        <div class="mb-6 pb-4">
             <label for="default-input"
                 class="block mb-2 text-sm font-poppins font-medium text-gray-900 dark:text-white">Password</label>
             <input type="password" id="password" name="password" required placeholder="Buat password baru"

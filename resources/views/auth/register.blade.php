@@ -30,8 +30,8 @@
     </div>
 </nav>
 
-<div class="container max-w-xl px-8 pt-8 mx-auto bg-slate-100">
-    <p class="text-2xl font-poppins font-medium leading-relaxed text-center text-gray-600">Buat Akun</p>
+<div class="min-h-screen max-w-xl px-8 pt-8 mx-auto bg-slate-100">
+    <p class="text-2xl font-poppins font-medium leading-relaxed text-center text-gray-600 pb-8">Buat Akun</p>
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <!--Alamat Email-->
@@ -65,7 +65,7 @@
         </div>
 
         <!--Konfirmasi Password-->
-        <div class="mb-6">
+        <div class="mb-6 pb-8">
             <label for="default-input"
                 class="block mb-2 text-sm font-poppins font-medium text-gray-900 dark:text-white">Konfirmasi
                 Password</label>
@@ -76,7 +76,7 @@
         </div>
 
         {{-- Button Submit --}}
-        <button class="mb-6 items-center justify-center w-full h-11 bg-blue-600 hover:bg-blue-700 rounded-lg">
+        <button class="mb-4 items-center justify-center w-full h-11 bg-blue-600 hover:bg-blue-700 rounded-lg">
             <p class="text-sm font-medium leading-tight text-center text-white">Buat akun</p>
         </button>
 
