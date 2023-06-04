@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class panggilan extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = 'panggilan';
     protected $fillable = [ 'Calltime', 'user_id'];
     protected $primarykey = ['id'];

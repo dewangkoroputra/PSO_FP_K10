@@ -4,6 +4,29 @@
 
 @section('content')
 <body class="min-h-screen max-w-xl mx-auto bg-slate-100">
+    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+    @if (Route::has('login'))
+        @auth
+            <?php $user_id = Auth::user()->id; ?>
+            <script>
+                $(document).ready(function(){
+                    $('#btn-call').click(function() {
+                        var data = {
+                            "_token": $('#token').val(),
+                            "user_id": {{ Js::from($user_id) }}
+                        };
+                        $.ajax({
+                            type: 'POST',
+                            url: '/savepanggilan',
+                            data: data
+                        });
+                    });
+                });
+
+            </script>
+        @endauth
+    @endif
+
     <img src="/assets/shield-illustration-nobg.png" class="w-56 h-56 flex justify-center mx-auto" alt="illustration">
     <p class="text-3xl font-poppins font-semibold leading-9 justify-center text-center text-neutral-900">Temukan Kembali <br>Kendaraan yang Hilang <br> dengan <span class="text-blue-600">Mudah</span></p>
 
@@ -147,7 +170,7 @@
                     <h3 class="mt-3 mb-5 text-sm font-poppins font-normal text-gray-500 dark:text-gray-400">Dengan menekan “Lanjutkan”, anda akan menyalakan fitur Panggil Petugas yang terhubung dengan petugas keamanan</h3>
                     @if (Route::has('login'))
                         @auth
-                            <a data-modal-hide="popup-modal" type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" href="tel:+6281232816403">Lanjutkan</a>
+                            <a id="btn-call" data-modal-hide="popup-modal" type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" href="tel:+6281232816403">Lanjutkan</a>
                         @else
                             <a data-modal-hide="popup-modal" type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2" href="{{route('login')}}">Lanjutkan</a>
                         @endauth

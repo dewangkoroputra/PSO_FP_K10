@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\KehilanganController;
 use App\Models\kehilangan;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\TelfonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,8 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::post('/savepanggilan',[TelfonController::class,'store']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
