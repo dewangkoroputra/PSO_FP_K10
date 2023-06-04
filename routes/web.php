@@ -45,10 +45,10 @@ require __DIR__.'/auth.php';
 
 //route tidak perlu autentifikasi
 Route::get('/', function () {
-    return view('homepage');
+    return view('homepage-tailwind');
 });
 Route::get('homepage', function () {
-    return view('homepage');
+    return view('homepage-tailwind');
 });
 
 Route::middleware(['guest'])->group(function () {
@@ -78,9 +78,5 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/tentang', function () {
     return view('tentangproduk');
-});
-
-Route::get('/beranda', function () {
-    return view('homepage-tailwind');
 });
 
