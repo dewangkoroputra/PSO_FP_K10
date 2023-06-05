@@ -22,6 +22,8 @@ return new class extends Migration
             $table->string('foto_kendaraan');
             $table->date('tanggal_kejadian');
             $table->time('waktu_kejadian');
+            $table->string('lokasi_kejadian',255);
+            $table->string('deskripsi', 512);
             $table->timestamps();
             });
     }
