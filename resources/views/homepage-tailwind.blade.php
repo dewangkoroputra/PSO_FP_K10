@@ -32,7 +32,7 @@
 
     <!--Button Lapor Kehilangan-->
     <div class="pt-10 pb-16 flex items-center justify-center">
-        <a href="#" class="px-8 text-center inline-flex justify-center items-center text-white font-poppins font-medium rounded-lg text-sm py-2.5 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-400 dark:focus:ring-blue-600/55">
+        <a href="{{ url('/laporkehilangan') }}" class="px-8 text-center inline-flex justify-center items-center text-white font-poppins font-medium rounded-lg text-sm py-2.5 bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-400 dark:focus:ring-blue-600/55">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-3 w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/>
             </svg>

@@ -83,3 +83,8 @@ Route::get('/tentang', function () {
     return view('tentangproduk');
 });
 
+Route::get('/kehilangansuccess', function () {
+    return view('kehilangan-success');
+});
+
+
