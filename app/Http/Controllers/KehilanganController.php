@@ -47,7 +47,7 @@ class KehilanganController extends Controller
         session()->flash('success', 'Susu sapi');
 
 
-        return view('homepage');
+        return view('kehilangan-success');
     }
     public function index()
     {

@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\KehilanganController;
 use App\Models\kehilangan;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\TelfonController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::post('/savepanggilan',[TelfonController::class,'store']);
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -45,10 +48,10 @@ require __DIR__.'/auth.php';
 
 //route tidak perlu autentifikasi
 Route::get('/', function () {
-    return view('homepage');
+    return view('homepage-tailwind');
 });
 Route::get('homepage', function () {
-    return view('homepage');
+    return view('homepage-tailwind');
 });
 
 Route::middleware(['guest'])->group(function () {
@@ -79,4 +82,9 @@ Route::middleware('auth')->group(function () {
 Route::get('/tentang', function () {
     return view('tentangproduk');
 });
+
+Route::get('/kehilangansuccess', function () {
+    return view('kehilangan-success');
+});
+
 

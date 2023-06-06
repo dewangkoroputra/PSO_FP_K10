@@ -28,7 +28,7 @@
     <nav
         class="sticky top-0 max-w-xl mx-auto navbar justify-between p-2 bg-white border-b-2 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="max-w-screen-xl mx-auto p-4 inline-flex space-x-4 items-center justify-start">
-            <a href="#" class="flex items-center">
+            <a href="{{ url('/') }}" class="flex items-center">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
