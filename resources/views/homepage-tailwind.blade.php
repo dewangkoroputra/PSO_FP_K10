@@ -110,7 +110,7 @@
                             </svg>
                             <p class="text-xs font-poppins leading-none text-gray-400">Deskripsi Kendaraan</p>
                         </div>
-                        <p class="text-xs font-poppins font-medium leading-none text-gray-600">Honda Beat 115 | Warna Hitam | 2019</p>
+                        <p class="text-xs font-poppins font-medium leading-none text-gray-600"> | Warna Hitam | 2019</p>
                     </div>
                     <div class="flex flex-col space-y-0.5 items-start justify-start pb-2">
                         <div class="inline-flex space-x-1.5 items-center justify-start text-gray-400">
@@ -143,6 +143,7 @@
             </div>
         </div>
     </div>
+
 
     <!--Floating Button-->
     <div class="fixed bottom-4 right-4">
