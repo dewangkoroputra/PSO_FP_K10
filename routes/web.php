@@ -88,10 +88,7 @@ Route::get('/detaillaporan', function () {
     return view('detail-laporan');
 });
 
-//Index Data
-//Route::get(\App\Http\Controllers\KehilanganController::class);
-//Route::get('kehilangan', 'KehilanganController@index')->name('kehilangan');
-Route::get('homepage-tailwind', 'KehilanganController@index');
-
+//
+Route::get('kehilangan/destroy/{id}', [KehilanganController::class,'destroy']);
 
 

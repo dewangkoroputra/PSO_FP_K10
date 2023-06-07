@@ -63,14 +63,15 @@ class KehilanganController extends Controller
         $kehilangan = kehilangan::findOrFail($id);
 
         //delete image
-        Storage::delete('storage/uploads/'.$post->upload_file);
+        Storage::delete('storage/uploads/'.$kehilangan->foto_kendaraan);
 
         //delete post
-        $post->delete();
+        $kehilangan->delete();
 
         //redirect to index
         return redirect()->back()->with(['success' => 'Data Berhasil Dihapus!']);
     }
+
     public function show(string $id): View
     {
         //get post by ID
@@ -80,5 +81,6 @@ class KehilanganController extends Controller
         return view('#', compact('ranmits'));
 
     }
+
 
 }

@@ -143,6 +143,7 @@
                     </svg>
                     <p class="text-sm font-poppins font-regular leading-none text-white">Hubungi Pemilik</p>
                 </a>
+                <a href="/kehilangan/destroy/{{ $posts->id }}">Hapus</a>
             </div>
         </div>
     </div>
