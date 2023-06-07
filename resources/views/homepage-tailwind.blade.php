@@ -92,14 +92,17 @@
     </div>
 
     <!--Card-->
+    @foreach ($post as $posts)
+
+
     <div class="flex max-w-xl px-8 pb-2 items-center justify-center">
         <div class="w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img class="w-full h-44 object-cover object-center rounded-t-lg" src="/assets/images.jpeg" alt="" />
+                <img class="w-full h-44 object-cover object-center rounded-t-lg" src="{{url('/storage/uploads/'.$posts->foto_kendaraan)}}" alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h5 class="mb-2 text-2xl font-poppins font-bold tracking-tight text-gray-900 dark:text-white">W 1234 PL</h5>
+                    <h5 class="mb-2 text-2xl font-poppins font-bold tracking-tight text-gray-900 dark:text-white">{{$posts->plat_nomor}}</h5>
                 </a>
                 <div class="inline-flex flex-col space-y-2 items-start justify-start w-48 pt-2 pb-6">
                     <div class="flex flex-col space-y-0.5 items-start justify-start pb-2">
@@ -110,7 +113,7 @@
                             </svg>
                             <p class="text-xs font-poppins leading-none text-gray-400">Deskripsi Kendaraan</p>
                         </div>
-                        <p class="text-xs font-poppins font-medium leading-none text-gray-600"> | Warna Hitam | 2019</p>
+                        <p class="text-xs font-poppins font-medium leading-none text-gray-600">{{$posts->model_kendaraan}} | {{$posts->warna}} | {{$posts->tahun_keluaran}}</p>
                     </div>
                     <div class="flex flex-col space-y-0.5 items-start justify-start pb-2">
                         <div class="inline-flex space-x-1.5 items-center justify-start text-gray-400">
@@ -119,7 +122,7 @@
                             </svg>
                             <p class="text-xs font-poppins leading-none text-gray-400">Waktu Kejadian</p>
                         </div>
-                        <p class="text-xs font-poppins font-medium leading-none text-gray-600">Senin, 29 November 2022  |  03:15 WIB</p>
+                        <p class="text-xs font-poppins font-medium leading-none text-gray-600">{{$posts->tanggal_kejadian}}  |  {{$posts->waktu_kejadian}}WIB</p>
                     </div>
                     <div class="flex flex-col space-y-0.5 items-start justify-start">
                         <div class="inline-flex space-x-1.5 items-center justify-start text-gray-400">
@@ -130,11 +133,11 @@
 
                             <p class="text-xs font-poppins leading-none text-gray-400">Terakhir Terlihat</p>
                         </div>
-                        <p class="text-xs font-poppins font-medium leading-none text-gray-600">Jl. Sepanjang Jalan Kenangan 123</p>
+                        <p class="text-xs font-poppins font-medium leading-none text-gray-600">{{$posts->lokasi_kejadian}}</p>
                     </div>
                 </div>
 
-                <a class="inline-flex space-x-2 items-center justify-center h-9 px-4 py-2 bg-blue-600 rounded-lg text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                <a href="https://wa.me/{{$posts->kontak}}" class="inline-flex space-x-2 items-center justify-center h-9 px-4 py-2 bg-blue-600 rounded-lg text-white hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-3.5 h-3.5">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
                     </svg>
@@ -143,6 +146,7 @@
             </div>
         </div>
     </div>
+    @endforeach
 
 
     <!--Floating Button-->

@@ -20,9 +20,7 @@ use App\Http\Controllers\TelfonController;
 
 //biar bisa akses laravel breeze
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [KehilanganController::class, 'index'])->name('post.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -47,22 +45,21 @@ Route::get('/laporkehilangan', function () {
 require __DIR__.'/auth.php';
 
 //route tidak perlu autentifikasi
-Route::get('/', function () {
-    return view('homepage-tailwind');
-});
-Route::get('homepage', function () {
-    return view('homepage-tailwind');
-});
+
 
 Route::middleware(['guest'])->group(function () {
-
+    Route::get('/', function () {
+        return view('homepage-tailwind');
+    });
+    Route::get('homepage', function () {
+        return view('homepage-tailwind');
+    });
+    Route::get('/', [KehilanganController::class, 'index'])->name('post.index');
   });
 
 //route that need authentication
 Route::middleware('auth')->group(function () {
-    Route::get('/teslogout', function () {
-        return view('teslogout');
-    });
+    Route::get('/', [KehilanganController::class, 'index'])->name('post.index');
     Route::get('tes', function (){
         return view('tes');
     });

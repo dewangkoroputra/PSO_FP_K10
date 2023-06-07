@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\kehilangan;
 use Illuminate\Http\RedirectResponse;
-
+use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\DB;
 
 class KehilanganController extends Controller
 {
@@ -24,13 +26,11 @@ class KehilanganController extends Controller
         ]);
         //State photo
         $photo =$request->file('foto_kendaraan')->store('images');
-        $nama_file = time()."_".$photo;
-
-        //buat nentuin tujuan foldernya
-        $tujuan_upload = 'lostphoto';
-
+        $nama_file =$request->file('foto_kendaraan')->getClientOriginalName();
         $phpdate = strtotime( $request['tanggal_kejadian'] );
         $mysqldate = date( 'Y-m-d', $phpdate );
+        $uploadDir = 'public/uploads';
+        $path = $request ->file('foto_kendaraan')->storeAs($uploadDir,$nama_file);
 
         kehilangan::create([
             'kontak'=> request('kontak'),
@@ -45,26 +45,40 @@ class KehilanganController extends Controller
             'lokasi_kejadian'=> request('lokasi_kejadian'),
             'deskripsi' => request('deskripsi')
         ]);
-        session()->flash('success', 'Susu sapi');
-
 
         return view('kehilangan-success');
     }
 
     public function index()
     {
-        $posts = kehilangan::latest()->all();
-        //return view('homepage-tailwind', compact('posts'));
-        //$posts = kehilangan::all()->last();
+        //
+        $post = kehilangan::all();
 
-        //$post = $posts->last();
-        //$posts = kehilangan::all();
-
-        return view('homepage-tailwind',compact('posts'));
-    /*
-    $posts = Post::latest()->all();
-
-    // Kirim data posting ke tampilan
-    return view('pagemateri', compact('posts'));*/
+        // Kirim data posting ke tampilan
+        return view('homepage-tailwind', compact('post'));
     }
+    public function destroy($id): RedirectResponse
+    {
+        //get post by ID
+        $kehilangan = kehilangan::findOrFail($id);
+
+        //delete image
+        Storage::delete('storage/uploads/'.$post->upload_file);
+
+        //delete post
+        $post->delete();
+
+        //redirect to index
+        return redirect()->back()->with(['success' => 'Data Berhasil Dihapus!']);
+    }
+    public function show(string $id): View
+    {
+        //get post by ID
+        $post = kehilangan::findOrFail($id);
+
+        //render view with post
+        return view('#', compact('ranmits'));
+
+    }
+
 }
