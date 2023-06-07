@@ -25,6 +25,7 @@ class KehilanganController extends Controller
         //State photo
         $photo =$request->file('foto_kendaraan')->store('images');
         $nama_file = time()."_".$photo;
+
         //buat nentuin tujuan foldernya
         $tujuan_upload = 'lostphoto';
 
@@ -49,12 +50,21 @@ class KehilanganController extends Controller
 
         return view('kehilangan-success');
     }
+
     public function index()
     {
+        $posts = kehilangan::latest()->all();
+        //return view('homepage-tailwind', compact('posts'));
+        //$posts = kehilangan::all()->last();
+
+        //$post = $posts->last();
+        //$posts = kehilangan::all();
+
+        return view('homepage-tailwind',compact('posts'));
     /*
-    $posts = Post::all();
+    $posts = Post::latest()->all();
 
     // Kirim data posting ke tampilan
     return view('pagemateri', compact('posts'));*/
-}
+    }
 }
