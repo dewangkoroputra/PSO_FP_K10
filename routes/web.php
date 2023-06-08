@@ -67,18 +67,14 @@ Route::middleware('auth')->group(function () {
         return view('teslogout');
     });
 
-    /*
-   //buat upload file
-    Route::get('upload', function () {
-        return view('upload');
-    });
-    Route::post('upload',[UploadController::class,'upload'])->name('upload');*/
     Route::post('/kehilangan',[KehilanganController::class,'store']);
 });
 
 Route::get('/tentang', function () {
     return view('tentangproduk');
 });
+
+Route::get('/kehilangan/{id}', [KehilanganController::class, 'show'])->name('show');
 
 Route::get('/kehilangansuccess', function () {
     return view('kehilangan-success');
@@ -90,5 +86,6 @@ Route::get('/detaillaporan', function () {
 
 //
 Route::get('kehilangan/destroy/{id}', [KehilanganController::class,'destroy']);
+
 
 

@@ -39,7 +39,7 @@
         </div>
     </nav>
     <div class="max-w-xl mx-auto bg-slate-100">
-        <img class="w-full h-56 object-cover object-center" src="/assets/images.jpeg" alt="" />
+        <img class="w-full h-56 object-cover object-center" src="{{asset('storage/uploads/'.$post->foto_kendaraan)}}" alt="" />
         <div class="min-h-screen max-w-xl px-4 pt-8">
             <div class="inline-flex flex-col px-2 w-full">
                 <h5 class="mb-4 text-3xl font-poppins font-bold tracking-tight text-gray-900 dark:text-white">W 1234 PL</h5>
@@ -54,7 +54,7 @@
                             </svg>
                             <p class="text-sm font-poppins leading-none text-gray-400">Deskripsi Kendaraan</p>
                         </div>
-                        <p class="text-sm font-poppins font-medium leading-none text-gray-600"> | Warna Hitam | 2019</p>
+                        <p class="text-sm font-poppins font-medium leading-none text-gray-600"> | {{$post->warna}} | {{$post->tahun_keluaran}}</p>
                     </div>
                     <div class="flex flex-col space-y-2 items-start justify-start pb-3">
                         <div class="inline-flex space-x-2 items-center justify-start text-gray-400">
@@ -65,7 +65,7 @@
                             </svg>
                             <p class="text-sm font-poppins leading-none text-gray-400">Waktu Kejadian</p>
                         </div>
-                        <p class="text-sm font-poppins font-medium leading-none text-gray-600">Senin, 29 November 2022 | 03:15 WIB</p>
+                        <p class="text-sm font-poppins font-medium leading-none text-gray-600">{{$post->tanggal_kejadian}} | {{$post->waktu_kejadian}} WIB</p>
                     </div>
                     <div class="flex flex-col space-y-2 items-start justify-start pb-3">
                         <div class="inline-flex space-x-2 items-center justify-start text-gray-400">
@@ -79,7 +79,7 @@
 
                             <p class="text-sm font-poppins leading-none text-gray-400">Terakhir Terlihat</p>
                         </div>
-                        <p class="text-sm font-poppins font-medium leading-none text-gray-600">Jl. Sepanjang Jalan Kenangan 123</p>
+                        <p class="text-sm font-poppins font-medium leading-none text-gray-600">{{$post->lokasi_kejadian}}</p>
                     </div>
                     <div class="flex flex-col space-y-2 items-start justify-start pb-4">
                         <div class="inline-flex space-x-2 items-center justify-start text-gray-400">
@@ -90,7 +90,7 @@
 
                             <p class="text-sm font-poppins leading-none text-gray-400">Deskripsi Tambahan</p>
                         </div>
-                        <p class="text-sm font-poppins font-medium leading-none text-gray-600">Terdapat bekas tabrakan pada dasbor belakang.</p>
+                        <p class="text-sm font-poppins font-medium leading-none text-gray-600">{{$post->deskripsi}}</p>
                     </div>
                 </div>
             </div>

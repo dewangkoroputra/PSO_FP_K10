@@ -97,11 +97,11 @@
 
     <div class="flex max-w-xl px-8 pb-2 items-center justify-center">
         <div class="w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
+            <a href="{{ route('show', ['id' => $posts]) }}">
                 <img class="w-full h-44 object-cover object-center rounded-t-lg" src="{{url('/storage/uploads/'.$posts->foto_kendaraan)}}" alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href="{{ route('show', ['id' => $posts]) }}">
                     <h5 class="mb-2 text-2xl font-poppins font-bold tracking-tight text-gray-900 dark:text-white">{{$posts->plat_nomor}}</h5>
                 </a>
                 <div class="inline-flex flex-col space-y-2 items-start justify-start w-48 pt-2 pb-6">

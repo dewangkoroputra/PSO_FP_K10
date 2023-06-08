@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\kehilangan;
 use Illuminate\Http\RedirectResponse;
-use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class KehilanganController extends Controller
 {
@@ -78,7 +78,7 @@ class KehilanganController extends Controller
         $post = kehilangan::findOrFail($id);
 
         //render view with post
-        return view('#', compact('ranmits'));
+        return view('detail-laporan', compact('post'));
 
     }
 
