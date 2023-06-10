@@ -66,6 +66,9 @@ Route::middleware('auth')->group(function () {
     Route::get('kehilangan', function (){
         return view('teslogout');
     });
+    Route::get('/profil', function () {
+        return view('profil');
+    });
 
     Route::post('/kehilangan',[KehilanganController::class,'store']);
 });

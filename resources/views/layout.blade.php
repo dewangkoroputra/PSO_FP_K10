@@ -80,7 +80,7 @@
                             Petugas</a>
                     </li>
                     <li>
-                        <a href="#"
+                        <a href="{{ url('/profil') }}"
                             class="flex w-full justify-end py-4 pl-3 pr-4 font-poppins text-lg text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Profil</a>
                     </li>
                     <li>
