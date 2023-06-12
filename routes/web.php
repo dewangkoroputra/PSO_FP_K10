@@ -88,4 +88,5 @@ Route::get('/detaillaporan', function () {
 Route::get('kehilangan/destroy/{id}', [KehilanganController::class,'destroy']);
 
 
+Route::get('/post/sortByJenis/{jenis}', [KehilanganController::class, 'sortByJenis'])->name('post.sortByJenis');
 
