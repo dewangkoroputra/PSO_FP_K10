@@ -33,9 +33,7 @@ Route::get('/layout', function () {
     return view('layout');
 });
 
-Route::get('/laporkehilangan', function () {
-    return view('formlaporan');
-});
+
 
 require __DIR__.'/auth.php';
 
@@ -51,7 +49,6 @@ Route::middleware(['guest'])->group(function () {
 
 //route that need authentication
 Route::middleware('auth')->group(function () {
-    Route::get('/', [KehilanganController::class, 'index'])->name('post.index');
     Route::get('tes', function (){
         return view('tes');
     });
@@ -65,6 +62,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [JointController::class, 'index'])->name('profile.index');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::get('/profile/destroy/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/laporkehilangan', function () {
+        return view('formlaporan');
+    });
+    Route::get('/kehilangansuccess', function () {
+        return view('kehilangan-success');
+    });
 });
 
 Route::get('/tentang', function () {
@@ -73,9 +76,7 @@ Route::get('/tentang', function () {
 
 Route::get('/kehilangan/{id}', [KehilanganController::class, 'show'])->name('show');
 
-Route::get('/kehilangansuccess', function () {
-    return view('kehilangan-success');
-});
+
 Route::post('/savelaporan',[KehilanganController::class,'storeuname']);
 Route::get('kehilangan/destroy/{id}', [KehilanganController::class,'destroy']);
 Route::get('/post/sortByJenis/{jenis}', [KehilanganController::class, 'sortByJenis'])->name('post.sortByJenis');
