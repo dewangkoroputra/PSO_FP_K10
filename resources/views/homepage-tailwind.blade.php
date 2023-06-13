@@ -100,7 +100,7 @@
         </div>
 
         <!--Selector-->
-        <div class="card-link">
+        <div class="card-link px-6 pb-4">
             <div class="inline-flex rounded-md shadow-sm">
                 <a href="{{ route('post.index') }}" data-jenis="semua"
                     class="kategori-link px-4 py-2 text-sm font-poppins font-medium text-blue-700 bg-white border border-gray-200 rounded-l-lg hover:bg-gray-100 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-700 dark:border-gray-600 dark:text-white dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-blue-500 dark:focus:text-white">Semua</a>
@@ -115,7 +115,7 @@
         <!--Card-->
         <div class="card-container">
             @foreach ($post as $posts)
-                <div class="flex max-w-xl px-8 pb-2 items-center justify-center">
+                <div class="flex max-w-xl px-8 pb-12 items-center justify-center">
                     <div
                         class="w-80 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <a href="{{ route('show', ['id' => $posts]) }}">
