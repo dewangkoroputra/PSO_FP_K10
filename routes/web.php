@@ -43,13 +43,10 @@ require __DIR__.'/auth.php';
 
 
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', function () {
-        return view('homepage-tailwind');
-    });
     Route::get('homepage', function () {
         return view('homepage-tailwind');
     });
-    Route::get('/', [KehilanganController::class, 'index'])->name('post.index');
+    Route::get('/home', [KehilanganController::class, 'index'])->name('post.index');
   });
 
 //route that need authentication
