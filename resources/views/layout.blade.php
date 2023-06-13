@@ -91,7 +91,7 @@
                             @auth
                                 <div class="flex justify-end">
                                     <div
-                                        class="max-w-2xl inline-flex w-80 items-center justify-end space-x-4 rounded-xl border border-gray-300 py-3 pr-3">
+                                        class="max-w-2xl inline-flex w-80 items-center justify-end space-x-4 rounded-xl border border-gray-300 pt-3 py-3 pr-3">
                                         <div class="inline-flex flex-col items-end justify-center space-y-0.5">
                                             <p class="text-md font-semibold leading-tight text-gray-700">
                                                 {{ Auth::user()->name }}</p>
