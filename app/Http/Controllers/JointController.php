@@ -11,7 +11,7 @@ class JointController extends Controller
     function index()
     {
     	$data = kehilangan::join('users', 'kehilangan.user_id', '=', 'users.id')
-              		->get(['users.name', 'users.id','users.email', 'kehilangan.kontak', 'kehilangan.jenisKendaraan','kehilangan.model_kendaraan','kehilangan.tahun_keluaran','kehilangan.warna','kehilangan.plat_nomor','kehilangan.foto_kendaraan','kehilangan.waktu_kejadian','kehilangan.tanggal_kejadian','kehilangan.deskripsi','kehilangan.lokasi_kejadian',]);
+              		->get(['kehilangan.id','users.name','users.email', 'kehilangan.kontak', 'kehilangan.jenisKendaraan','kehilangan.model_kendaraan','kehilangan.tahun_keluaran','kehilangan.warna','kehilangan.plat_nomor','kehilangan.foto_kendaraan','kehilangan.waktu_kejadian','kehilangan.tanggal_kejadian','kehilangan.deskripsi','kehilangan.lokasi_kejadian',]);
 
         return view('profil', compact('data'));
     }

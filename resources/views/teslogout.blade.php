@@ -5,10 +5,6 @@
     @csrf
 </form>
 
-<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-    @csrf
-</form>
-
 
 {{-- INI BUAT FORM KENDARAAN HILANG --}}
 <h2>Laporan kendaraan Hilang</h2>

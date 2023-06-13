@@ -67,7 +67,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/kehilangan',[KehilanganController::class,'store']);
     Route::get('/profile', [JointController::class, 'index'])->name('profile.index');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/profile/destroy/{id}', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/tentang', function () {
@@ -79,14 +79,7 @@ Route::get('/kehilangan/{id}', [KehilanganController::class, 'show'])->name('sho
 Route::get('/kehilangansuccess', function () {
     return view('kehilangan-success');
 });
-
-Route::get('/detaillaporan', function () {
-    return view('detail-laporan');
-});
 Route::post('/savelaporan',[KehilanganController::class,'storeuname']);
-//
 Route::get('kehilangan/destroy/{id}', [KehilanganController::class,'destroy']);
-
-
 Route::get('/post/sortByJenis/{jenis}', [KehilanganController::class, 'sortByJenis'])->name('post.sortByJenis');
 
