@@ -82,5 +82,12 @@ class KehilanganController extends Controller
 
     }
 
+    public function sortByJenis($jenis)
+    {
+        $post = kehilangan::where('jenisKendaraan', $jenis)->get();
+
+        return view('homepage-tailwind', compact('post'));
+    }
+
 
 }
