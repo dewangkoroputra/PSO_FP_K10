@@ -8,12 +8,16 @@
     <body class="max-w-xl px-8 pt-8 mx-auto bg-slate-100 h-max">
         <div class="pt-2 pb-8 inline-flex space-x-1.5 items-center justify-start w-full">
             <p class="flex-1 text-2xl font-poppins font-semibold leading-9 text-gray-800">Profil</p>
-            <button class="flex space-x-2 items-center justify-start px-4 py-1.5 bg-red-50 border rounded-lg border-red-300">
-                <p class="text-xs font-poppins font-medium leading-none text-red-700">Keluar Akun</p>
+            <div class="flex space-x-2 items-center justify-start px-4 py-1.5 bg-red-50 border rounded-lg border-red-300">
+                <p class="text-xs font-poppins font-medium leading-none text-red-700"></p>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar Akun</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="text-red-700 w-4 h-4">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                   </svg>
-            </button>
+                </div>
         </div>
         <p class="pb-4 text-lg font-poppins font-medium leading-relaxed text-gray-600">Data Akun</p>
         <div class="inline-flex flex-col space-y-1 items-start justify-start w-full">
