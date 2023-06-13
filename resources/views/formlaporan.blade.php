@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 </head>
-
+<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 <body>
     <nav
         class="sticky top-0 max-w-xl mx-auto navbar justify-between p-2 bg-white border-b-2 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
@@ -204,6 +204,7 @@
                     class="block mb-6 p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     placeholder="Tuliskan deskripsi pendukung disini..."></textarea>
             </section>
+            <input type="hidden" name="user_id" value="{{ auth()->user()->id }}">
 
             {{-- Button Submit --}}
             <button type="submit" id="btn-submit"

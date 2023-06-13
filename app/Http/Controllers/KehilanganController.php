@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\kehilangan;
+use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class KehilanganController extends Controller
 {
@@ -22,15 +24,18 @@ class KehilanganController extends Controller
             'foto_kendaraan'=> 'required',
             'tanggal_kejadian'=> 'required',
             'waktu_kejadian'=> 'required',
-            'lokasi_kejadian'=> 'required'
+            'lokasi_kejadian'=> 'required',
+            'user_id'=>'required',
         ]);
-        //State photo
+        //State Variable
         $photo =$request->file('foto_kendaraan')->store('images');
         $nama_file =$request->file('foto_kendaraan')->getClientOriginalName();
         $phpdate = strtotime( $request['tanggal_kejadian'] );
         $mysqldate = date( 'Y-m-d', $phpdate );
         $uploadDir = 'public/uploads';
         $path = $request ->file('foto_kendaraan')->storeAs($uploadDir,$nama_file);
+        $userid = auth()->user()->id;
+
 
         kehilangan::create([
             'kontak'=> request('kontak'),
@@ -43,7 +48,9 @@ class KehilanganController extends Controller
             'tanggal_kejadian'=> $mysqldate,
             'waktu_kejadian'=> request('waktu_kejadian'),
             'lokasi_kejadian'=> request('lokasi_kejadian'),
-            'deskripsi' => request('deskripsi')
+            'deskripsi' => request('deskripsi'),
+            'user_id'=> $userid,
+
         ]);
 
         return view('kehilangan-success');
@@ -57,6 +64,7 @@ class KehilanganController extends Controller
         // Kirim data posting ke tampilan
         return view('homepage-tailwind', compact('post'));
     }
+
     public function destroy($id): RedirectResponse
     {
         //get post by ID

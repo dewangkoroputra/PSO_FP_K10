@@ -7,6 +7,7 @@ use App\Http\Controllers\KehilanganController;
 use App\Models\kehilangan;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\TelfonController;
+use App\Http\Controllers\JointController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,12 +28,6 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::post('/savepanggilan',[TelfonController::class,'store']);
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
 
 Route::get('/layout', function () {
     return view('layout');
@@ -69,8 +64,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profil', function () {
         return view('profil');
     });
-
     Route::post('/kehilangan',[KehilanganController::class,'store']);
+    Route::get('/profile', [JointController::class, 'index'])->name('profile.index');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 Route::get('/tentang', function () {
@@ -86,7 +83,7 @@ Route::get('/kehilangansuccess', function () {
 Route::get('/detaillaporan', function () {
     return view('detail-laporan');
 });
-
+Route::post('/savelaporan',[KehilanganController::class,'storeuname']);
 //
 Route::get('kehilangan/destroy/{id}', [KehilanganController::class,'destroy']);
 

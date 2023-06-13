@@ -46,7 +46,7 @@
     <nav
         class="sticky top-0 max-w-xl mx-auto navbar justify-between p-2 bg-white border-b-2 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a href="#" class="flex items-center">
+            <a href="{{ url('/') }}" class="flex items-center">
                 <img src="/assets/vertical-logo-text.png" class="h-9 mr-2" alt="RanmITS Logo">
             </a>
             <button data-collapse-toggle="navbar-hamburger" type="button"
@@ -83,7 +83,7 @@
                             Petugas</a>
                     </li>
                     <li>
-                        <a href="{{ url('/profil') }}"
+                        <a href="{{ url('/profile') }}"
                             class="flex w-full justify-end py-4 pl-3 pr-4 font-poppins text-lg text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Profil</a>
                     </li>
                     <li>

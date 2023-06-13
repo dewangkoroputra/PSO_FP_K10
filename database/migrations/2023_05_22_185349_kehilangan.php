@@ -24,6 +24,8 @@ return new class extends Migration
             $table->time('waktu_kejadian');
             $table->string('lokasi_kejadian',255);
             $table->string('deskripsi', 512);
+            $table->foreignid('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('Cascade');
             $table->timestamps();
             });
     }
