@@ -137,10 +137,10 @@
         <div class="container inline-flex flex-col items-center justify-center">
             <img src="/assets/ranmits-footer.png" class="mt-12 mb-4 h-9 mr-2" alt="RanmITS Logo">
             <p class="font-poppins text-sm leading-none text-white mt-2 mb-2">Platform pencarian kendaraan hilang</p>
-            <a href=# class="font-poppins text-base font-medium leading-snug text-white mt-6 mb-2">Lapor Kehilangan</a>
+            <a href="{{ url('/laporkehilangan') }}" class="font-poppins text-base font-medium leading-snug text-white mt-6 mb-2">Lapor Kehilangan</a>
             <a href=# data-modal-target="popup-modal" data-modal-toggle="popup-modal"
                 class="font-poppins text-base font-medium leading-snug text-white mt-2 mb-2">Panggil Petugas</a>
-            <a href=# class="font-poppins text-base font-medium leading-snug text-white mt-2 mb-12">Tentang Produk</a>
+            <a href="{{ url('/tentang') }}" class="font-poppins text-base font-medium leading-snug text-white mt-2 mb-12">Tentang Produk</a>
         </div>
         <div class="container inline-flex flex-col items-center justify-center px-5 py-5 bg-gray-800">
             <p class="font-poppins text-xs font-medium leading-none text-white">Created by erbepeel a © 2023</p>
