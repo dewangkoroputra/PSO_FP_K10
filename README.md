@@ -27,13 +27,13 @@ The following are the steps that need to be taken to run this project
 
 ### Step 1: Clone the Repository
 
-**Clone the repository using HTTPS**
+- **Clone the repository using HTTPS**
 
    ```sh
     git clone https://github.com/EvanrizaSA/FPSO_K10.git
    ```
 
-**Navigate into the cloned repository**
+- **Navigate into the cloned repository**
 
    ```sh
     cd FPSO_K10
