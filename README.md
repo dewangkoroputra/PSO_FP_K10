@@ -66,10 +66,8 @@ _After donwloading all prequities, you can follow this setup steps:_
 
 #### [Docker](https://docs.docker.com/?_gl=1*1c6kr47*_gcl_au*MTA3NjkzNTEyNC4xNzE2OTc4MTE0*_ga*MjAzODQ3MzkxMC4xNzE2OTU3MDUw*_ga_XJWPQMJYHQ*MTcxOTM4ODY3My4yNC4xLjE3MTkzODg2NzMuNjAuMC4w)
 
-Docker is use to containerized our development environtment. In this project docker will reads docker-compose.yml and dockerfiles files.
+Docker is use to containerized our development environtment. In this project docker will reads dockerfiles files.
 
--   ##### [docker-compose.yml](https://github.com/laodeshaldanfalih/docker-trinity-app/blob/main/docker-compose.yml)
-    This file is use for configuring every image that we need to run our application. In this project we use every image to support laravel development such as nginx, mysql, phpmyadmin, etc.
 -   ##### [dockerfiles](https://github.com/laodeshaldanfalih/docker-trinity-app/tree/main/dockerfiles)
     This files are use for configuring every image that have been installed. In this project we assign every image to the user and group so that it can be accessed in the server
 
