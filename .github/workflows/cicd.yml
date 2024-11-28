@@ -1,8 +1,9 @@
 name: CI/CD Pipeline
+
 on:
   push:
     branches:
-      - dev
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -18,7 +19,7 @@ jobs:
       - name: Run tests
         run: php artisan test
       - name: Build Docker Image
-        run: docker build -t deceitfull/fpso_kel10
+        run: docker build -t deceitfull/fpso_kel10 . 
       - name: Login to DockerHub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Publish Image to DockerHub
@@ -26,11 +27,11 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Deploy to EC2
-        run: ssh -o StrictHostKeyChecking=no ec2-user@52.64.199.117 && docker pull deceitfull/fpso_kel10
-      - name: Stop and Delete old container
-        run: docker stop ranmits-container && docker rm ranmits-container
+      - name: Pull Image
+        run: docker pull deceitfull/fpso_kel10
+      - name: Delete old container
+        run: docker rm -f ranmits-container
       - name: Run Docker Container
         run: docker run -d -p 80:80 --name ranmits-container deceitfull/fpso_kel10
