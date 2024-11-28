@@ -16,6 +16,8 @@ jobs:
           php-version: '8.2'
       - name: Install dependencies
         run: composer install
+      - name: Build Docker Image
+        run: docker build -t deceitfull/fpso_kel10 .
       - name: Login to DockerHub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
       - name: Publish Image to DockerHub
