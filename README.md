@@ -5,7 +5,7 @@ This is our Final Project for the DevOps (A) class. This Final DevOps Project ai
 ## Introducing our team!
 - Ihsan Kamil Al Ghozi - 5026211117 | <a href="https://github.com/Deceitfulz">Github</a>
 - Evanriza Safiq Ariadi - (5026211139) | <a href="https://github.com/EvanrizaSA">Github</a>
-- Dewangkoro Ramadhan Putra - (5026211167) <a href="https://github.com/dewangkoroputra">Github</a>
+- Dewangkoro Ramadhan Putra - (5026211167) | <a href="https://github.com/dewangkoroputra">Github</a>
 
 ## About The Project
 
