@@ -1,0 +1,28 @@
+# Use an official PHP image with Apache
+FROM php:8.2-apache
+
+# Set the working directory
+WORKDIR /var/www/html
+
+# Copy the application code into the container
+COPY . .
+
+# Install dependencies using Composer
+RUN apt-get update && apt-get install -y \
+    unzip \
+    && docker-php-ext-install pdo pdo_mysql
+
+# Install Composer (if not included in the base image)
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+
+# Run Composer to install project dependencies
+RUN composer install --no-dev --optimize-autoloader
+
+# Set proper permissions for Laravel (if applicable)
+RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
+
+# Expose port 80 for the web server
+EXPOSE 80
+
+# Start Apache
+CMD ["apache2-foreground"]
