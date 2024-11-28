@@ -95,7 +95,7 @@
                             <p class="deskripsi-title">
                                 Deskripsi Kendaraan
                             </p>
-                            <p class="isi-deskripsi">Honda Beat 115 | Warna Hitam | 2019</p>
+                            <p class="isi-deskripsi">Honda Beat 150 | Warna Hitam | 2019</p>
                         </div>
                     </div>
                 </div>
