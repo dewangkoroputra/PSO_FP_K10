@@ -27,18 +27,17 @@ The following are the steps that need to be taken to run this project
 
 ### Step 1: Clone the Repository
 
-1. **Clone the repository using HTTPS**
+**Clone the repository using HTTPS**
+
    ```sh
     git clone https://github.com/EvanrizaSA/FPSO_K10.git
-    ```
-2. **Navigate into the cloned repository**
+   ```
+
+**Navigate into the cloned repository**
+
    ```sh
     cd FPSO_K10
-    ```
-4. **Install dependencies** -> still not sure
-   ```sh
-    npm install
-    ```   
+   ```
 
 ### Step 2: Run the project 
 
