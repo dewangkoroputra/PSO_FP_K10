@@ -18,8 +18,6 @@ jobs:
         run: composer install
       - name: Login to DockerHub
         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-      - name: Build Docker Image
-        run: docker build -t deceitfull/fpso_kel10 .
       - name: Publish Image to DockerHub
         run: docker push deceitfull/fpso_kel10:latest
 
