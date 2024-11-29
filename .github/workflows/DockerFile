@@ -1,5 +1,5 @@
 FROM php:8.2-apache
-WORKDIR /public
+WORKDIR /var/www/html/public
 COPY . .
 RUN apt-get update && apt-get install -y \
     unzip \
