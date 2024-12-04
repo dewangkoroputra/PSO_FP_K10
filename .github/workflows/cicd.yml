@@ -32,4 +32,4 @@ jobs:
       - name: Delete old container
         run: docker rm -f ranmits-container
       - name: Run Docker Container
-        run: docker run -d -p 80:80 --name ranmits-container deceitfull/fpso_kel10
+        run: docker run -d -p 3030:3030 --name ranmits-container deceitfull/fpso_kel10
