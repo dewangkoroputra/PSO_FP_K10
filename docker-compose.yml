@@ -12,7 +12,7 @@ services:
     environment:
       APP_ENV: production
       APP_DEBUG: false
-      APP_KEY: base64:your_application_key_here
+      APP_KEY: base64:ppqYLLnVOdcGmrapjLMYuqnuV9WN9oFrT7p6QMf6F8Y=
       DB_HOST: db # Hostname of the MySQL service
       DB_PORT: 3306
       DB_DATABASE: laravel
